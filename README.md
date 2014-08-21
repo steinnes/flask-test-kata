@@ -23,6 +23,7 @@ This project has the following skeleton:
         |   ├── __init__.py
         |   └── test_views.py
         └── unit
+            ├── __init__.py
             └── test_logic.py
 
 The tasks at hand:
@@ -61,4 +62,4 @@ with pytest.raises(MyException):
 Integration Tests
 -----------------
 
-1. 
+1.
