@@ -2,6 +2,7 @@ bootstrap:
 	rm -rf venv
 	virtualenv venv
 	venv/bin/pip install -r requirements.txt
+	venv/bin/python setup.py develop
 
 integrationtest:
 	venv/bin/py.test tests/integration -v
