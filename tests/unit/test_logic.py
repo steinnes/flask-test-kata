@@ -1,5 +1,5 @@
 from unittest import TestCase
-from app.logic import Calculator
+from calculator.logic import Calculator
 
 
 class CalculatorTests(TestCase):

@@ -6,7 +6,7 @@ This is a python testing kata for a simple Flask web "service".
 This project has the following skeleton:
 
     flask-test-kata
-    ├── app
+    ├── calculator
     │   ├── __init__.py
     │   ├── app.py
     │   ├── logic.py

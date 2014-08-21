@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-from app import __version__
+from calculator import __version__
 
 setup(
     name='flask_test_kata',

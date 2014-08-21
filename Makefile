@@ -13,4 +13,4 @@ unit_test:
 test: unit_test integration_test
 
 run:
-	venv/bin/python app/app.py
+	venv/bin/python calculator/app.py

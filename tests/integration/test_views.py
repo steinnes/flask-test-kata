@@ -1,10 +1,11 @@
 from unittest import TestCase
 from ..base import TestClient
-from app import app
+from calculator.app import app
 
 
 class ViewTests(TestCase):
     def setUp(self):
+        app.config['TESTING'] = True
         self.client = TestClient(app)
 
     def test_multiply(self):
