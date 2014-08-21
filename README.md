@@ -7,14 +7,20 @@ This project has the following skeleton:
 
     flask-test-kata
     ├── app
+    │   ├── __init__.py
     │   ├── app.py
     │   ├── logic.py
     │   └── templates
     │       └── index.html
     ├── Makefile
+    ├── README.md
     ├── requirements.txt
+    ├── setup.py
     └── tests
+        ├── __init__.py
+        ├── base.py
         ├── integration
+        |   ├── __init__.py
         |   └── test_views.py
         └── unit
             └── test_logic.py
