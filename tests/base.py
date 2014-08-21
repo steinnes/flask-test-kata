@@ -1,5 +1,6 @@
 from flask.testing import FlaskClient
 
+
 class TestClient(FlaskClient):
     class Response(object):
         def __init__(self, status, body, headers):
