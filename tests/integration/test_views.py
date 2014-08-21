@@ -1,11 +1,13 @@
 from unittest import TestCase
-from flask.testing import FlaskClient
+from ..base import TestClient
+from app import app
 
 
 class ViewTests(TestCase):
     def setUp(self):
-        from flask import current_app
-        self.client = FlaskClient(current_app)
+        self.client = TestClient(app)
 
-    def test_calculate_multiply_two_positive_numbers(self):
-        pass
+    def test_multiply(self):
+        r = self.client.get("/calc/3*10")
+        self.assertEquals(r.status_code, 200)
+        self.assertEquals(r.body, "30")
