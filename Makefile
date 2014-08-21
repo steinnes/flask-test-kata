@@ -4,13 +4,13 @@ bootstrap:
 	venv/bin/pip install -r requirements.txt
 	venv/bin/python setup.py develop
 
-integrationtest:
+integration_test:
 	venv/bin/py.test tests/integration -v
 
-unittest:
+unit_test:
 	venv/bin/py.test tests/unit -v
 
-test: unittest integrationtest
+test: unit_test integration_test
 
 run:
 	venv/bin/python app/app.py
