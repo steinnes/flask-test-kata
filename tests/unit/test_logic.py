@@ -39,5 +39,26 @@ class CalculatorTests(TestCase):
         with pytest.raises(ValueTooHighException):
             calc.mul(5, 11)
 
+    def test_mul_does_not_raise_exception_on_a_on_boundaries(self):
+        calc = Calculator(1, 10)
+        # test lower bound
+        result = calc.mul(1, 5)
+        self.assertEquals(result, 5)
+
+        # test upper bound
+        result = calc.mul(10, 5)
+        self.assertEquals(result, 50)
+
+    def test_mul_does_not_raise_exception_on_b_on_boundaries(self):
+        calc = Calculator(1, 10)
+        # test lower bound
+        result = calc.mul(5, 1)
+        self.assertEquals(result, 5)
+
+        # test upper bound
+        result = calc.mul(5, 10)
+        self.assertEquals(result, 50)
+
+
     def test_div(self):
         pass

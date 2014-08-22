@@ -24,7 +24,6 @@ class Calculator(object):
         if b < self.min_value:
             raise ValueTooLowException("Input {} smaller than minimum allowed: {}".format(b, self.max_value))
 
-
         return a * b
 
     def div(self, a, b):
