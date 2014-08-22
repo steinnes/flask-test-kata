@@ -43,12 +43,14 @@ Unit Tests
    `max_value`. Change the class so that it's methods throw the exceptions
    in `logic.py` when confronted with numbers that are too high or too low.
 
-4. `logic.Calculator` contains another method stub: `div`. This method should
+4. Make sure to add tests to check the boundary of `min_value` and `max_value`.
+
+5. `logic.Calculator` contains another method stub: `div`. This method should
    divide `a` by `b`, but it is just a stub now. Write corresponding tests for
    the method, as you've written for `logic.Calculator.mul`, then implement
    the method to pass your tests.
 
-5. Division has more caveats than multiplication. Python will raise an exception
+6. Division has more caveats than multiplication. Python will raise an exception
    of type ZeroDivisionError when you attempt to divide by zero, write a test
    asserts that your Calculator class does not suppress them.
 
