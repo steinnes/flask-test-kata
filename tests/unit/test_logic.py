@@ -97,3 +97,12 @@ class CalculatorTests(TestCase):
         result = calc.div(5, 10)
         self.assertEquals(result, 0.5)
 
+    def test_div_raises_zero_division_error_on_b_zero(self):
+        calc = Calculator()
+        with pytest.raises(ZeroDivisionError):
+            calc.div(1, 0)
+
+    def test_div_does_not_raise_zero_division_error_on_a_zero(self):
+        calc = Calculator()
+        result = calc.div(0, 1)
+        self.assertEquals(result, 0)
