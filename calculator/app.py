@@ -29,6 +29,8 @@ def divide(a, b):
         return e.message, 403
     except ValueTooHighException as e:
         return e.message, 403
+    except ZeroDivisionError:
+        return 'cannot divide by 0', 403
     return str(result)
 
 

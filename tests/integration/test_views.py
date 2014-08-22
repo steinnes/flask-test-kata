@@ -33,3 +33,7 @@ class ViewTests(TestCase):
     def test_divide_returns_403_for_out_of_upper_bound(self):
         r = self.client.get("/calc/10/2000")
         self.assertEquals(r.status_code, 403)
+
+    def test_divide_returns_403_for_a_0_denominator(self):
+        r = self.client.get("/calc/10/0")
+        self.assertEquals(r.status_code, 403)
