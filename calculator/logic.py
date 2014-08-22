@@ -30,4 +30,4 @@ class Calculator(object):
 
     def div(self, a, b):
         self._protect_boundaries(a, b)
-        return float(a) / float(b);
+        return float(a) / float(b)

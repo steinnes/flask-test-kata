@@ -8,7 +8,7 @@ class CalculatorTests(TestCase):
         calc = Calculator()
         result = calc.mul(3, 4)
         self.assertEquals(result, 12)
-        
+
     def test_mul_with_two_negative_numbers(self):
         calc = Calculator()
         result = calc.mul(-3, -4)
@@ -63,7 +63,7 @@ class CalculatorTests(TestCase):
         calc = Calculator()
         result = calc.div(12, 3)
         self.assertEquals(result, 4)
-        
+
     def test_div_with_two_negative_numbers(self):
         calc = Calculator()
         result = calc.div(-12, -3)
@@ -73,7 +73,6 @@ class CalculatorTests(TestCase):
         calc = Calculator()
         result = calc.div(-12, 3)
         self.assertEquals(result, -4)
-
 
     def test_div_does_not_raise_exception_on_a_on_boundaries(self):
         calc = Calculator(1, 10)
