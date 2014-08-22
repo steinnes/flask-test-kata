@@ -10,7 +10,7 @@ app = Flask(__name__)
 def multiply(a, b):
     c = Calculator()
 
-    result = c.mul(a, b)
+    result = c.mul(int(a), int(b))
     return str(result)
 
 
