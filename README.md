@@ -48,7 +48,9 @@ Unit Tests
    the method, as you've written for `logic.Calculator.mul`, then implement
    the method to pass your tests.
 
-5. Division has more caveats than multiplication. ZeroDivisionError ?
+5. Division has more caveats than multiplication. Python will raise an exception
+   of type ZeroDivisionError when you attempt to divide by zero, write a test
+   asserts that your Calculator class does not suppress them.
 
 
 The preferred way of testing whether exceptions are raised is to use
@@ -67,8 +69,19 @@ Integration Tests
    Implement integration tests which verify the responses for valid
    and invalid inputs (think about the boundaries of max and min values).
 
-2. Make sure that for requests that attempt to divide by zero that the
-   calculator app returns an appropriate 40x response (ideas at
-   http://httpstatus.es) and that the respective response is
-   integration tested.
+2. Write corresponding integration tests for the `/div` view
+
+3. Make sure that for requests that attempt to divide by zero that the
+   calculator app returns an appropriate 403 response.
+
+
+Setup
+-----
+
+In order to start simply clone the repo:
+
+    $ git clone git@github.com:plain-vanilla-games/flask-test-kata.git
+    $ cd flask-test-kata
+    $ make bootstrap
+    $ make test
 
