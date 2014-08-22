@@ -1,7 +1,7 @@
 # encoding=utf-8
 
 from flask import Flask, render_template
-from logic import Calculator
+from logic import Calculator, ValueTooLowException, ValueTooHighException
 
 app = Flask(__name__)
 
@@ -10,13 +10,26 @@ app = Flask(__name__)
 def multiply(a, b):
     c = Calculator()
 
-    result = c.mul(int(a), int(b))
+    try:
+        result = c.mul(int(a), int(b))
+    except ValueTooLowException as e:
+        return e.message, 403
+    except ValueTooHighException as e:
+        return e.message, 403
     return str(result)
 
 
 @app.route("/calc/<a>/<b>")
 def divide(a, b):
-    return "Unsupported operation", 501
+    c = Calculator()
+
+    try:
+        result = c.div(int(a), int(b))
+    except ValueTooLowException as e:
+        return e.message, 403
+    except ValueTooHighException as e:
+        return e.message, 403
+    return str(result)
 
 
 @app.route("/")
