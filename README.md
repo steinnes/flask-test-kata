@@ -62,4 +62,13 @@ with pytest.raises(MyException):
 Integration Tests
 -----------------
 
-1.
+1. If by now the multiplication logic has been correctly implemented,
+   the `test_multiply` integration test should be passing.
+   Implement integration tests which verify the responses for valid
+   and invalid inputs (think about the boundaries of max and min values).
+
+2. Make sure that for requests that attempt to divide by zero that the
+   calculator app returns an appropriate 40x response (ideas at
+   http://httpstatus.es) and that the respective response is
+   integration tested.
+
