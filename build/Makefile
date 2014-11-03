@@ -26,4 +26,4 @@ run: build
 	docker run -it -p 80:8000 $(DOCKISTRY)/$(SERVICE)
 
 test: build
-	docker run -it $(DOCKISTRY)/$(SERVICE) py.test /app/tests -v
+	docker run -it $(DOCKISTRY)/$(SERVICE) /app/build/runtests.sh
