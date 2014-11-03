@@ -1,0 +1,11 @@
+uwsgi:
+  http: 0.0.0.0:8000
+  stats: /tmp/uwsgi.stats.sock
+  master: 1
+  processes: 16
+  memory-report: 1
+  file: /app/calculator
+  listen: 128
+#  disable-logging: true
+#  #  max-requests: 1000
+#    die-on-term: true

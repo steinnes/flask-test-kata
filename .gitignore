@@ -10,7 +10,6 @@ __pycache__/
 env/
 venv/
 bin/
-build/
 develop-eggs/
 dist/
 eggs/

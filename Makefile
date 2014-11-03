@@ -14,3 +14,6 @@ test: unit_test integration_test
 
 run:
 	venv/bin/python calculator/app.py
+
+docker_run:
+	cd build && make run
