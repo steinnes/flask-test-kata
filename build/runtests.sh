@@ -1,3 +1,4 @@
 #!/bin/bash
 cd /app
-py.test --cov calculator --cov-report term-missing /app/tests -v
+py.test --color=no --cov calculator --cov-report xml --junit-xml=/testoutput/junit.xml /app/tests -v
+mv coverage.xml /testoutput
