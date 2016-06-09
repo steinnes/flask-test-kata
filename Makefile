@@ -1,6 +1,6 @@
 bootstrap:
 	rm -rf venv
-	virtualenv venv
+	virtualenv -p python2.7 venv
 	venv/bin/pip install -r requirements.txt
 	venv/bin/python setup.py develop
 
