@@ -12,3 +12,8 @@ class ViewTests(TestCase):
         r = self.client.get("/calc/3*10")
         self.assertEquals(r.status_code, 200)
         self.assertEquals(r.body, "30")
+
+    def test_division(self):
+        r = self.client.get("/calc/100/18")
+        self.assertEquals(r.status_code, 200)
+        self.assertEquals(r.body, "5")
