@@ -5,20 +5,21 @@ from calculator.logic import Calculator, ValueTooLowException, ValueTooHighExcep
 
 
 class CalculatorTests(TestCase):
+    def setUp(self):
+        self.calc = Calculator(1, 10)
+
     def test_mul(self):
-        calc = Calculator()
-        assert calc.mul(6, 5) == 30
+        assert self.calc.mul(6, 5) == 30
 
     def test_mul_with_two_positive_numbers(self):
-        calc = Calculator()
-        assert calc.mul(6, 5) == 30
+        assert self.calc.mul(6, 5) == 30
 
     def test_mul_with_two_negative_numbers(self):
-        calc = Calculator()
+        calc = Calculator(-10, 10)
         assert calc.mul(-1, -1) == 1
 
     def test_mul_with_one_negative_one_positive_number(self):
-        calc = Calculator()
+        calc = Calculator(-10, 10)
         assert calc.mul(-1, 1) == -1
 
     def test_mul_with_first_value_too_low(self):
@@ -50,4 +51,43 @@ class CalculatorTests(TestCase):
         assert calc.mul(1, 10) == 10
 
     def test_div(self):
-        pass
+        assert self.calc.div(10, 2) == 5
+
+    def test_div_with_two_positive_numbers(self):
+        assert self.calc.div(6, 2) == 3
+
+    def test_div_with_two_negative_numbers(self):
+        calc = Calculator(-10, 10)
+        assert calc.div(-1, -1) == 1
+
+    def test_div_with_one_negative_one_positive_number(self):
+        calc = Calculator(-10, 10)
+        assert calc.div(-1, 1) == -1
+
+    def test_div_with_first_value_too_low(self):
+        with pytest.raises(ValueTooLowException):
+            calc = Calculator(1, 10)
+            calc.div(0, 2)
+
+    def test_div_with_first_value_too_high(self):
+        with pytest.raises(ValueTooHighException):
+            calc = Calculator(1, 10)
+            calc.div(11, 2)
+
+    def test_div_with_second_value_too_low(self):
+        with pytest.raises(ValueTooLowException):
+            calc = Calculator(1, 10)
+            calc.div(2, 0)
+
+    def test_div_with_second_value_too_high(self):
+        with pytest.raises(ValueTooHighException):
+            calc = Calculator(1, 10)
+            calc.div(2, 11)
+
+    def test_div_first_boundary(self):
+        calc = Calculator(1, 10)
+        assert calc.div(1, 1) == 1
+
+    def test_div_second_boundary(self):
+        calc = Calculator(1, 10)
+        assert calc.div(10, 10) == 1

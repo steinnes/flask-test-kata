@@ -22,8 +22,8 @@ class Calculator(object):
 
     def mul(self, a, b):
         self._checkvals(a, b)
-        return a*b
+        return a * b
 
     def div(self, a, b):
         self._checkvals(a, b)
-        pass
+        return a / b
