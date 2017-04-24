@@ -18,7 +18,11 @@ def multiply(a, b):
 def divide(a, b):
     c = Calculator()
 
-    result = c.div(int(a), int(b))
+    try:
+        result = c.div(int(a), int(b))
+    except ZeroDivisionError:
+        return "", 403
+
     return str(result)
 
 

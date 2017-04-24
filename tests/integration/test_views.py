@@ -17,3 +17,7 @@ class ViewTests(TestCase):
         r = self.client.get("/calc/100/18")
         self.assertEquals(r.status_code, 200)
         self.assertEquals(r.body, "5")
+
+    def test_division_by_zero_is_forbidden(self):
+        r = self.client.get("/calc/100/0")
+        self.assertEquals(r.status_code, 403)
