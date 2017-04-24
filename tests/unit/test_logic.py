@@ -91,3 +91,8 @@ class CalculatorTests(TestCase):
     def test_div_second_boundary(self):
         calc = Calculator(1, 10)
         assert calc.div(10, 10) == 1
+
+    def test_div_with_zerodivision(self):
+        with pytest.raises(ZeroDivisionError):
+            calc = Calculator(0, 10)
+            calc.div(1, 0)
