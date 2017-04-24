@@ -41,5 +41,13 @@ class CalculatorTests(TestCase):
             calc = Calculator(1, 10)
             calc.mul(2, 11)
 
+    def test_mul_first_boundary(self):
+        calc = Calculator(1, 10)
+        assert calc.mul(1, 9) == 9
+
+    def test_mul_second_boundary(self):
+        calc = Calculator(1, 10)
+        assert calc.mul(1, 10) == 10
+
     def test_div(self):
         pass
