@@ -16,7 +16,10 @@ def multiply(a, b):
 
 @app.route("/calc/<a>/<b>")
 def divide(a, b):
-    return "Unsupported operation", 501
+    c = Calculator()
+
+    result = c.div(int(a), int(b))
+    return str(result)
 
 
 @app.route("/")
